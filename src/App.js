@@ -1,6 +1,15 @@
+import Simpsons from "./components/simpsonsFamily/simpsons/Simpsons";
+import Characters from "./components/allCharacters/characters/Characters";
+
 function App() {
+
+
     return (
-        <div>Hello</div>
+        <div>
+            <Simpsons/>
+            <Characters/>
+        </div>
+
     );
 }
 
