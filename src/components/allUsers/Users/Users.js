@@ -13,7 +13,7 @@ function Users() {
 
 
     return (
-        <div>
+        <div className={'users_div'}>
             {
                 users.map(value => <User key={value.id} user={value}/>)
             }

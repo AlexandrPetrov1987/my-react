@@ -15,7 +15,7 @@ function Comments() {
     }, [])
 
     return (
-        <div>
+        <div className={'comments_div'}>
             {
                 comments.map(value => <Comment key={value.id} comment={value}/>)
             }

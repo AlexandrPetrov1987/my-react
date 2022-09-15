@@ -1,0 +1,19 @@
+.wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: burlywood;
+    justify-content: space-around;
+}
+.users_div {
+    width: 45%;
+    background: cornflowerblue;
+}
+.posts_div {
+    width: 45%;
+    background: aqua;
+}
+.comments_div {
+    width: 100%;
+    background: silver;
+}

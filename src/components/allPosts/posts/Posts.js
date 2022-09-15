@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+
 import Post from "../post/Post";
 
 function Posts() {
@@ -14,7 +15,7 @@ function Posts() {
 
 
     return (
-        <div>
+        <div className={'posts_div'}>
             {
                 posts.map(value => <Post key={value.id} post={value}/>)
             }
