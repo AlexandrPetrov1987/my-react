@@ -1,7 +1,13 @@
+import {Cars} from "./components/cars/Cars";
+
 function App() {
     return (
-        <div>Hello</div>
+        <div>
+            <Cars/>
+        </div>
     );
 }
 
 export default App;
+
+
