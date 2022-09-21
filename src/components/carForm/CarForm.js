@@ -4,26 +4,35 @@ import {useEffect} from "react";
 
 import {carValidator} from "../../validators";
 import {carService} from "../../services";
+import {object} from "joi";
 
 
-const CarForm = ({setCars, carUpdate}) => {
+const CarForm = ({setCars, carUpdate,setCarUpdate}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({
         resolver: joiResolver(carValidator),
         mode: 'all'
     });
 
-    const {id, model, price, year} = carUpdate;
+
 
     useEffect(() => {
-        setValue('model', 'BMW')
-        setValue('price', 0)
-        setValue('year', 1990)
-    }, [id])
+        if (carUpdate) {
+            setValue('model', carUpdate.model,{shouldValidate:true})
+            setValue('price', carUpdate.price,{shouldValidate:true})
+            setValue('year', carUpdate.year,{shouldValidate:true})
+        }
+
+    }, [carUpdate, setValue])
 
     const submit = async (car) => {
-        if (id) {
-            const {data} = await carService.updateById(id, car);
-            setCars(cars => [...cars, data])
+        if (carUpdate) {
+            const {data} = await carService.updateById(carUpdate.id, car);
+            setCars(cars => {
+                const find = cars.find(value => value.id === data.id);
+                    Object.assign(find, data)
+                return [...cars];
+            })
+            setCarUpdate(null);
             reset();
         } else {
             const {data} = await carService.create(car);
@@ -48,7 +57,7 @@ const CarForm = ({setCars, carUpdate}) => {
             {errors.year && <span>{errors.year.message}</span>}
             {/*<input type="text" placeholder={'engine'} {...register('property.engine', {valueAsNumber: true})}/>*/}
             {/*<input type="text" placeholder={'wheels'} {...register('property.wheels', {valueAsNumber: true})}/>*/}
-            <button disabled={!isValid}>{id ? 'update' : 'save'}</button>
+            <button disabled={!isValid}>{carUpdate ? 'update' : 'save'}</button>
         </form>
     );
 };
