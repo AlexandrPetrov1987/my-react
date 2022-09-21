@@ -1,0 +1,10 @@
+.wrap {
+    width: 40%;
+    background: burlywood;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+

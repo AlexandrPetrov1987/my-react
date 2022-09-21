@@ -1,6 +1,10 @@
+import {Users} from "./components";
+
 function App() {
     return (
-        <div>Hello</div>
+        <div>
+            <Users/>
+        </div>
     );
 }
 
