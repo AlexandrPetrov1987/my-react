@@ -12,13 +12,13 @@ const CarForm = ({setCars, carUpdate}) => {
         mode: 'all'
     });
 
+    const {id, model, price, year} = carUpdate;
+
     useEffect(() => {
         setValue('model', 'BMW')
         setValue('price', 0)
         setValue('year', 1990)
-    }, [])
-
-    const {id, model, price, year} = carUpdate;
+    }, [id])
 
     const submit = async (car) => {
         if (id) {
