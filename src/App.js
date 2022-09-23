@@ -1,6 +1,12 @@
+import {Route, Routes} from "react-router-dom";
+
 function App() {
     return (
-        <div>Hello</div>
+        <Routes>
+            <Route>
+
+            </Route>
+        </Routes>
     );
 }
 
