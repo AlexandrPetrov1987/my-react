@@ -1,0 +1,9 @@
+.style {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input {
+    width: 350px;
+}
