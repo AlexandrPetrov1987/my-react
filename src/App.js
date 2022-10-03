@@ -1,4 +1,5 @@
-import {useReducer, useState} from "react";
+import {useReducer, useRef} from "react";
+
 import css from './App.module.css'
 
 const reducer = (state, action) => {
@@ -25,25 +26,26 @@ const reducer = (state, action) => {
 
 function App() {
     const [state, dispatch] = useReducer(reducer, {cats: [], dogs: []});
-    const [cat, setCat] = useState('');
-    const [dog, setDog] = useState('');
+
+    const catInput = useRef();
+    const dogInput = useRef();
 
     const createCat = () => {
-        dispatch({type: 'addCat', payload: cat});
-        setCat('');
+        dispatch({type: 'addCat', payload: catInput.current.value});
+        catInput.current.value = '';
+
     }
 
     const createDog = () => {
-        dispatch({type: 'addDog', payload: dog});
-        setDog('');
+        dispatch({type: 'addDog', payload: dogInput.current.value});
+        dogInput.current.value = '';
     }
 
     return (
         <div className={css.style}>
             <div className={css.main}>
                 <div className={css.input}>
-                    <label>Cat name: <input type="text" onChange={({target}) => setCat(target.value)}
-                                            value={cat}/></label>
+                    <label>Cat name: <input type="text" ref={catInput}/></label>
                     <button onClick={() => createCat()}>Save cat</button>
                 </div>
 
@@ -62,8 +64,7 @@ function App() {
             <div className={css.main}>
 
                 <div className={css.input}>
-                    <label>Dog name: <input type="text" onChange={({target}) => setDog(target.value)}
-                                            value={dog}/></label>
+                    <label>Dog name: <input type="text" ref={dogInput}/></label>
                     <button onClick={() => createDog()}>Save dog</button>
 
                 </div>
