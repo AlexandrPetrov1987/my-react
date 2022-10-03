@@ -43,8 +43,8 @@ function App() {
 
     return (
         <div className={css.style}>
-            <div className={css.main}>
-                <div className={css.input}>
+            <div>
+                <div>
                     <label>Cat name: <input type="text" ref={catInput}/></label>
                     <button onClick={() => createCat()}>Save cat</button>
                 </div>
@@ -54,7 +54,9 @@ function App() {
                         state.cats.map(cat => (<div key={cat.id}>
                             {cat.name}
                             <button onClick={() => dispatch({type: 'deleteCat', payload: cat.id})}>delete cat</button>
-                        </div>))
+                        </div>)
+
+                        )
                     }
                 </div>
 
