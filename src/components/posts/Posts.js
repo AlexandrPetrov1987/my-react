@@ -15,7 +15,7 @@ const Posts = () => {
 
     return (
         <div>
-            {post && (<Post post={post}/>)}
+            {post && <Post post={post}/>}
         </div>
     )
 }
