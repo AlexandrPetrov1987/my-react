@@ -1,8 +1,8 @@
 import {Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {Albums, Comments, Posts, Todos} from "./components";
-import {AlbumsPage, CommentsPage, TodosPage} from "./pages";
+import {Posts} from "./components";
+import {AlbumsPage, CommentsPage, PostsPage, TodosPage} from "./pages";
 
 function App() {
     return (
@@ -13,6 +13,7 @@ function App() {
                     <Route path={':postId'} element={<Posts/>}/>
                 </Route>
                 <Route path={'todos'} element={<TodosPage/>}/>
+                <Route path={'posts'} element={<PostsPage/>}/>
             </Route>
 
         </Routes>
