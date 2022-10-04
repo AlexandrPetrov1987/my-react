@@ -1,0 +1,9 @@
+const LOAD_COMMENTS = "LOAD_COMMENTS";
+const LOAD_POSTS = "LOAD_POSTS";
+const LOAD_USERS = "LOAD_USERS";
+
+export {
+    LOAD_COMMENTS,
+    LOAD_POSTS,
+    LOAD_USERS
+}
