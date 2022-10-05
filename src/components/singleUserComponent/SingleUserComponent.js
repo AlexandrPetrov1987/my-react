@@ -2,7 +2,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {useEffect} from "react";
 
-import {usersService} from "../../services";
 import {LOAD_SINGLE_USER} from "../../redux";
 import {SingleUserDetails} from "../singleUserDetails/SingleUserDetails";
 
@@ -20,7 +19,7 @@ const SingleUserComponent = () => {
 
     return (
         <div>
-            {state.user && (<SingleUserDetails user={state.user} key={state.user.id}/>)}
+            {state.user && (<SingleUserDetails user={state.user}/>)}
         </div>
     )
 }
