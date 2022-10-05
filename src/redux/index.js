@@ -4,3 +4,4 @@ export * from './store/combain';
 export * from './reducers/usersReducer';
 export * from './reducers/commentsReducer';
 export * from './reducers/postsReducer';
+export * from './reducers/singleUserReducer';

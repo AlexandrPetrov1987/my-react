@@ -5,3 +5,4 @@ export * from './users/Users';
 export * from './comment/Comment';
 export * from './post/Post';
 export * from './user/User';
+export * from './singleUserComponent/SingleUserComponent';
