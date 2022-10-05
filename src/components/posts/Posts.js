@@ -7,7 +7,7 @@ import {Post} from "../post/Post";
 
 const Posts = () => {
 
-    const state = useSelector(state => state.postsReducer);
+    const {posts} = useSelector(state => state.postsReducer);
 
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Posts = () => {
     return (
         <div>
             {
-                state.posts.map(post => <Post key={post.id} post={post}/>)
+                posts.map(post => <Post key={post.id} post={post}/>)
             }
         </div>
     )

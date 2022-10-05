@@ -7,7 +7,7 @@ import {Comment} from "../comment/Comment";
 
 const Comments = () => {
 
-    const state = useSelector(state => state.commentsReducer);
+    const {comments} = useSelector(state => state.commentsReducer);
 
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Comments = () => {
     return (
         <div>
             {
-                state.comments.map(comment => <Comment key={comment.id} comment={comment}/>)
+                comments.map(comment => <Comment key={comment.id} comment={comment}/>)
             }
         </div>
     )

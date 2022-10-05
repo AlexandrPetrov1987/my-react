@@ -7,7 +7,7 @@ import {User} from "../user/User";
 
 const Users = () => {
 
-    const state = useSelector(state => state.usersReducer);
+    const {users} = useSelector(state => state.usersReducer);
 
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Users = () => {
     return (
         <div>
             {
-                state.users.map(user => <User key={user.id} user={user}/>)
+                users.map(user => <User key={user.id} user={user}/>)
             }
         </div>
     )

@@ -8,16 +8,14 @@ import {SingleUserDetails} from "../singleUserDetails/SingleUserDetails";
 
 const SingleUserComponent = () => {
 
-    const state = useSelector(state => state.singleUserReducer);
-
-    console.log(state);
+    const state = useSelector(state => state.usersReducer);
 
     const dispatch = useDispatch();
 
     const {id} = useParams();
 
     useEffect(() => {
-        usersService.getById(id).then(({data}) => dispatch({type: LOAD_SINGLE_USER, payload: data}))
+        dispatch({type: LOAD_SINGLE_USER, payload: +id})
     },[id])
 
     return (
