@@ -7,7 +7,7 @@ import {SingleUserDetails} from "../singleUserDetails/SingleUserDetails";
 
 const SingleUserComponent = () => {
 
-    const state = useSelector(state => state.usersReducer);
+    const {user} = useSelector(state => state.usersReducer);
 
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const SingleUserComponent = () => {
 
     return (
         <div>
-            {state.user && (<SingleUserDetails user={state.user}/>)}
+            {user && (<SingleUserDetails user={user}/>)}
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import {Link, useParams} from "react-router-dom";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 import css from './Headers.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
 import {LOAD_SINGLE_USER} from "../../redux";
 
 const Headers = () => {
