@@ -1,7 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 import {carService} from "../../services";
-import {get} from "react-hook-form";
 
 const initialState = {
     cars: [],
@@ -28,7 +27,6 @@ const create = createAsyncThunk(
             const {data} = await carService.create(car);
             return data;
         } catch (e) {
-            console.log(e);
             return rejectWithValue(e.response.data);
         }
     }
@@ -75,7 +73,7 @@ const carSlice = createSlice({
                 state.loading = false;
             })
 
-            .addCase(getAll.pending, (state, action) => {
+            .addCase(getAll.pending, (state) => {
                 state.loading = true;
             })
 
@@ -84,7 +82,7 @@ const carSlice = createSlice({
                 state.loading = false;
             })
 
-            .addCase(create.pending, (state, action) => {
+            .addCase(create.pending, (state) => {
                 state.loading = true;
             })
 
@@ -95,7 +93,7 @@ const carSlice = createSlice({
                 state.loading = false;
             })
 
-            .addCase(updateById.pending, (state, action) => {
+            .addCase(updateById.pending, (state) => {
                 state.loading = true;
             })
 
@@ -105,7 +103,7 @@ const carSlice = createSlice({
                 state.loading = false;
             })
 
-            .addCase(deleteCar.pending, (state, action) => {
+            .addCase(deleteCar.pending, (state) => {
                 state.loading = true;
             })
 
@@ -117,6 +115,7 @@ const carSlice = createSlice({
                 } else {
                     state.errors = null;
                 }
+
             })
 });
 
