@@ -9,7 +9,7 @@ const initialState = {
 }
 
 const getAll = createAsyncThunk(
-    'carSlice/geAll',
+    'carSlice/getAll',
     async (_, {rejectWithValue}) => {
         try {
             const {data} = await carService.getAll();
